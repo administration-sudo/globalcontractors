@@ -1,0 +1,2149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Contractors Group – End-to-End Manpower Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A1628;
+    --navy-mid: #112240;
+    --gold: #C9922A;
+    --gold-light: #E8B84B;
+    --gold-pale: #FDF3E3;
+    --white: #FFFFFF;
+    --off-white: #F8F7F4;
+    --text-dark: #0A1628;
+    --text-mid: #3A4B62;
+    --text-light: #6B7A8E;
+    --border: #E2D9CC;
+    --accent-teal: #1A6B6E;
+    --accent-teal-light: #E8F4F5;
+    --success: #1A6B3C;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--text-dark);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+  a { color: inherit; text-decoration: none; }
+
+  /* PAGE SYSTEM */
+  .page { display: none; animation: fadeIn 0.4s ease; }
+  .page.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* NAV */
+  nav {
+    background: var(--navy);
+    position: sticky; top: 0; z-index: 100;
+    border-bottom: 2px solid var(--gold);
+  }
+  .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 64px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px; cursor: pointer;
+  }
+  .nav-logo-mark {
+    width: 38px; height: 38px; background: var(--gold);
+    border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 900; color: var(--navy);
+  }
+  .nav-logo-text { color: var(--white); font-size: 15px; font-weight: 600; line-height: 1.2; }
+  .nav-logo-sub { color: var(--gold-light); font-size: 10px; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 0; }
+  .nav-links a {
+    color: rgba(255,255,255,0.75); font-size: 13px; font-weight: 500;
+    padding: 0 14px; height: 64px; display: flex; align-items: center;
+    transition: color 0.2s, background 0.2s; letter-spacing: 0.3px;
+    cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px;
+  }
+  .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+  .nav-links a.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+  .nav-cta {
+    background: var(--gold); color: var(--navy) !important;
+    padding: 0 18px !important; border-radius: 4px; font-weight: 600 !important;
+    height: 36px !important; display: flex; align-items: center;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    min-height: 560px;
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding: 5rem 2rem;
+  }
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image: 
+      linear-gradient(135deg, rgba(201,146,42,0.08) 0%, transparent 60%),
+      repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(255,255,255,0.02) 80px, rgba(255,255,255,0.02) 81px),
+      repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(255,255,255,0.02) 80px, rgba(255,255,255,0.02) 81px);
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201,146,42,0.15); border: 1px solid rgba(201,146,42,0.4);
+    color: var(--gold-light); font-size: 12px; font-weight: 500;
+    padding: 6px 14px; border-radius: 20px; margin-bottom: 1.5rem;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .hero-badge-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+  .hero h1 {
+    font-size: clamp(2.4rem, 5vw, 4rem); color: var(--white); font-weight: 900;
+    line-height: 1.1; margin-bottom: 1.5rem; max-width: 700px;
+  }
+  .hero h1 span { color: var(--gold-light); }
+  .hero-sub {
+    color: rgba(255,255,255,0.65); font-size: 1.1rem; max-width: 580px;
+    margin-bottom: 2.5rem; line-height: 1.75;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold); color: var(--navy); font-weight: 700;
+    padding: 14px 32px; border-radius: 4px; font-size: 15px; cursor: pointer;
+    transition: all 0.2s; border: none; font-family: 'DM Sans', sans-serif;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: var(--white); font-weight: 500;
+    padding: 14px 32px; border-radius: 4px; font-size: 15px; cursor: pointer;
+    transition: all 0.2s; border: 1px solid rgba(255,255,255,0.3);
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.05); }
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 3.5rem; padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900;
+    color: var(--gold-light); line-height: 1;
+  }
+  .hero-stat-label { color: rgba(255,255,255,0.55); font-size: 12px; margin-top: 4px; letter-spacing: 0.5px; }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700;
+    color: var(--navy); line-height: 1.2; margin-bottom: 1.25rem;
+  }
+  .section-desc { color: var(--text-mid); font-size: 1.05rem; max-width: 600px; }
+
+  /* PRODUCT NAV */
+  .product-nav-bar {
+    background: var(--off-white); border-bottom: 1px solid var(--border);
+    padding: 0 2rem; overflow-x: auto;
+  }
+  .product-nav-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 0; }
+  .product-nav-bar a {
+    font-size: 13px; font-weight: 500; color: var(--text-mid);
+    padding: 14px 20px; white-space: nowrap; cursor: pointer;
+    border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.2s;
+  }
+  .product-nav-bar a:hover { color: var(--navy); }
+  .product-nav-bar a.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+  /* CARDS */
+  .cards-grid { display: grid; gap: 1.5rem; margin-top: 3rem; }
+  .cards-grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .cards-grid.cols-4 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .cards-grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+
+  .card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 2rem;
+    transition: all 0.25s; cursor: pointer;
+  }
+  .card:hover { border-color: var(--gold); box-shadow: 0 8px 32px rgba(10,22,40,0.08); transform: translateY(-2px); }
+  .card-icon {
+    width: 48px; height: 48px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; margin-bottom: 1.25rem;
+  }
+  .card-icon.navy { background: var(--navy); color: var(--gold-light); }
+  .card-icon.gold { background: var(--gold-pale); color: var(--gold); }
+  .card-icon.teal { background: var(--accent-teal-light); color: var(--accent-teal); }
+  .card h3 { font-size: 1.15rem; margin-bottom: 0.6rem; color: var(--navy); }
+  .card p { color: var(--text-mid); font-size: 0.93rem; line-height: 1.65; }
+  .card-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--gold); font-size: 13px; font-weight: 600;
+    margin-top: 1.25rem; cursor: pointer; transition: gap 0.2s;
+  }
+  .card-link:hover { gap: 10px; }
+  .card-arrow { font-size: 16px; }
+
+  /* FEATURE ROW */
+  .feature-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+    align-items: center; padding: 5rem 2rem;
+  }
+  .feature-row.reverse { direction: rtl; }
+  .feature-row.reverse > * { direction: ltr; }
+  .feature-text h2 { font-size: 2.2rem; margin-bottom: 1.25rem; color: var(--navy); }
+  .feature-text p { color: var(--text-mid); margin-bottom: 1rem; }
+  .feature-bullets { list-style: none; margin-top: 1.5rem; }
+  .feature-bullets li {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.95rem;
+    color: var(--text-mid);
+  }
+  .feature-bullets li::before {
+    content: '✦'; color: var(--gold); font-size: 10px; margin-top: 5px; flex-shrink: 0;
+  }
+  .feature-visual {
+    background: var(--navy); border-radius: 12px; padding: 2.5rem;
+    color: var(--white); position: relative; overflow: hidden;
+  }
+  .feature-visual::before {
+    content: '';
+    position: absolute; top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: rgba(201,146,42,0.12); border-radius: 50%;
+  }
+  .feature-visual h3 { font-size: 1.4rem; color: var(--gold-light); margin-bottom: 1rem; }
+  .stat-row { display: flex; gap: 2rem; margin-top: 1.5rem; }
+  .stat-item { flex: 1; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: var(--gold-light); }
+  .stat-lab { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+
+  /* PROCESS STEPS */
+  .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; margin-top: 3rem; }
+  .process-step {
+    padding: 2rem; border-right: 1px solid var(--border); position: relative;
+  }
+  .process-step:last-child { border-right: none; }
+  .step-num {
+    font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900;
+    color: var(--gold-pale); line-height: 1; margin-bottom: 0.5rem;
+  }
+  .process-step h4 { font-size: 1rem; color: var(--navy); margin-bottom: 0.5rem; }
+  .process-step p { font-size: 0.88rem; color: var(--text-light); }
+
+  /* SERVICES LIST */
+  .service-list { list-style: none; }
+  .service-list li {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+    font-size: 0.95rem; color: var(--text-mid);
+  }
+  .service-list li .s-dot {
+    width: 8px; height: 8px; background: var(--gold); border-radius: 50%; flex-shrink: 0;
+  }
+
+  /* SECTOR BADGE */
+  .sector-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 2rem; }
+  .badge {
+    background: var(--off-white); border: 1px solid var(--border);
+    border-radius: 20px; padding: 8px 18px; font-size: 13px; font-weight: 500;
+    color: var(--text-mid); transition: all 0.2s;
+  }
+  .badge:hover { background: var(--gold-pale); border-color: var(--gold); color: var(--navy); }
+  .badge.featured { background: var(--navy); color: var(--gold-light); border-color: var(--navy); }
+
+  /* TESTIMONY / HIGHLIGHT */
+  .highlight-box {
+    background: var(--navy); color: var(--white);
+    border-radius: 12px; padding: 3rem;
+    position: relative; overflow: hidden;
+  }
+  .highlight-box::after {
+    content: '"';
+    position: absolute; right: 2rem; top: -1rem;
+    font-family: 'Playfair Display', serif; font-size: 12rem;
+    color: rgba(201,146,42,0.1); line-height: 1;
+  }
+  .highlight-box blockquote {
+    font-family: 'Playfair Display', serif; font-size: 1.5rem; font-style: italic;
+    color: var(--white); max-width: 700px; line-height: 1.5; position: relative; z-index: 1;
+  }
+  .highlight-meta { margin-top: 1.5rem; color: var(--gold-light); font-size: 13px; font-weight: 500; }
+
+  /* LEADERSHIP */
+  .leader-card {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 8px; padding: 2rem; text-align: center;
+  }
+  .leader-avatar {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: var(--navy); display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1rem;
+    font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--gold-light);
+  }
+  .leader-name { font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+  .leader-title { font-size: 0.85rem; color: var(--gold); font-weight: 500; margin-top: 4px; }
+  .leader-bio { font-size: 0.9rem; color: var(--text-mid); margin-top: 1rem; line-height: 1.6; }
+
+  /* VISION TIMELINE */
+  .timeline { position: relative; margin-top: 3rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 32px; top: 0; bottom: 0;
+    width: 2px; background: var(--border);
+  }
+  .timeline-item { display: flex; gap: 2rem; margin-bottom: 2.5rem; position: relative; }
+  .timeline-dot {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--navy); border: 3px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700;
+    color: var(--gold-light); flex-shrink: 0; position: relative; z-index: 1;
+  }
+  .timeline-content { padding-top: 12px; }
+  .timeline-content h4 { font-size: 1.05rem; color: var(--navy); margin-bottom: 0.4rem; }
+  .timeline-content p { font-size: 0.9rem; color: var(--text-mid); }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .contact-info h3 { font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--navy); }
+  .contact-item { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 2rem; }
+  .contact-icon {
+    width: 44px; height: 44px; background: var(--gold-pale); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;
+  }
+  .contact-label { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+  .contact-val { font-size: 0.95rem; color: var(--text-dark); }
+  .contact-form { background: var(--off-white); border-radius: 12px; padding: 2.5rem; border: 1px solid var(--border); }
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label { font-size: 13px; font-weight: 600; color: var(--navy); display: block; margin-bottom: 6px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 11px 14px; border: 1px solid var(--border);
+    border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 14px;
+    background: var(--white); color: var(--text-dark); outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--gold);
+  }
+  .form-group textarea { height: 120px; resize: vertical; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  /* CLIENTS */
+  .clients-section { background: var(--off-white); padding: 4rem 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .clients-grid { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+  .client-chip {
+    background: var(--white); border: 1px solid var(--border); border-radius: 6px;
+    padding: 12px 20px; font-size: 13px; font-weight: 600; color: var(--text-mid);
+    transition: all 0.2s; cursor: pointer;
+  }
+  .client-chip:hover { border-color: var(--gold); color: var(--navy); }
+  .client-chip.gov { background: var(--navy); color: var(--gold-light); border-color: var(--navy); }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    padding: 4rem 2rem 2rem;
+  }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+  .footer-brand p { font-size: 0.9rem; margin-top: 1rem; line-height: 1.7; color: rgba(255,255,255,0.55); }
+  .footer-col h4 { color: var(--gold-light); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1.25rem; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.7rem; }
+  .footer-col ul li a { font-size: 13px; color: rgba(255,255,255,0.55); cursor: pointer; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--gold-light); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: rgba(255,255,255,0.4);
+  }
+  .footer-bottom a { color: var(--gold-light); }
+
+  /* ALT BG SECTIONS */
+  .bg-navy { background: var(--navy); color: var(--white); }
+  .bg-navy .section-title { color: var(--white); }
+  .bg-navy .section-desc { color: rgba(255,255,255,0.65); }
+  .bg-off { background: var(--off-white); }
+  .bg-gold-pale { background: var(--gold-pale); }
+
+  /* DIVIDER */
+  .divider { height: 1px; background: var(--border); max-width: 1200px; margin: 0 auto; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .feature-row { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .cards-grid.cols-2 { grid-template-columns: 1fr; }
+  }
+
+  /* PAGE HEADER */
+  .page-header {
+    background: var(--navy); padding: 4rem 2rem 3rem;
+    position: relative; overflow: hidden;
+  }
+  .page-header::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+  .page-header-inner { max-width: 1200px; margin: 0 auto; }
+  .breadcrumb { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 0.75rem; }
+  .breadcrumb span { color: var(--gold-light); cursor: pointer; }
+  .breadcrumb span:hover { text-decoration: underline; }
+  .page-header h1 { font-size: clamp(2rem, 4vw, 3rem); color: var(--white); margin-bottom: 0.75rem; }
+  .page-header p { color: rgba(255,255,255,0.6); max-width: 600px; font-size: 1.05rem; }
+
+  /* INLINE LINK STYLE */
+  .text-link { color: var(--gold); font-weight: 500; cursor: pointer; }
+  .text-link:hover { text-decoration: underline; }
+
+  /* CTA BANNER */
+  .cta-banner {
+    background: var(--gold); padding: 4rem 2rem; text-align: center;
+  }
+  .cta-banner h2 { font-size: 2.2rem; color: var(--navy); margin-bottom: 1rem; }
+  .cta-banner p { color: rgba(10,22,40,0.7); margin-bottom: 2rem; }
+
+  /* EXPERTISE TABS */
+  .tab-nav { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 2.5rem; overflow-x: auto; }
+  .tab-btn {
+    padding: 14px 24px; font-size: 14px; font-weight: 500; cursor: pointer;
+    border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap;
+    color: var(--text-light); transition: all 0.2s; background: none; border-top: none; border-left: none; border-right: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .tab-btn.active { color: var(--navy); border-bottom-color: var(--gold); font-weight: 600; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; animation: fadeIn 0.3s ease; }
+
+  /* MISSION CARDS */
+  .mission-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 8px;
+    padding: 2.5rem; border-top: 4px solid var(--gold);
+  }
+  .mission-card.teal-top { border-top-color: var(--accent-teal); }
+  .mission-card h3 { font-size: 1.3rem; color: var(--navy); margin-bottom: 1rem; }
+  .mission-card p { color: var(--text-mid); line-height: 1.75; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  @media(max-width:700px){ .two-col { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="showPage('home')">
+      <div class="nav-logo-mark">GC</div>
+      <div>
+        <div class="nav-logo-text">Global Contractors Group</div>
+        <div class="nav-logo-sub">End-to-End Manpower Services</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a onclick="showPage('home')" id="nav-home" class="active">Home</a>
+      <a onclick="showPage('solutions')" id="nav-solutions">Talent Solutions</a>
+      <a onclick="showPage('expertise')" id="nav-expertise">Expertise</a>
+      <a onclick="showPage('services')" id="nav-services">Services</a>
+      <a onclick="showPage('leadership')" id="nav-leadership">Leadership</a>
+      <a onclick="showPage('payslip')" id="nav-payslip">📄 Payslip Request</a>
+      <a onclick="showPage('contact')" id="nav-contact" class="nav-cta">Contact Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- =================== HOME PAGE =================== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        10 Years of Excellence · Telangana & Andhra Pradesh · Pan-India
+      </div>
+      <h1>Building India's<br>Workforce, <span>One Right Hire</span><br>at a Time.</h1>
+      <p class="hero-sub">
+        Global Contractors Group delivers end-to-end manpower solutions—from sourcing and screening to deployment and managed services—with unmatched trust, transparency, and statutory compliance.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="showPage('solutions')">Explore Our Services →</button>
+        <button class="btn-outline" onclick="showPage('contact')">Talk to an Expert</button>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">10+</div>
+          <div class="hero-stat-label">Years in Business</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">500+</div>
+          <div class="hero-stat-label">Professionals Deployed</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">50+</div>
+          <div class="hero-stat-label">Government & Corporate Clients</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">3</div>
+          <div class="hero-stat-label">States: TS · AP · Pan-India</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS NAV -->
+  <div class="product-nav-bar">
+    <div class="product-nav-inner">
+      <a onclick="showPage('solutions')" class="active">Overview</a>
+      <a onclick="showSubPage('permanent-staffing')">Permanent Staffing</a>
+      <a onclick="showSubPage('contract-staffing')">Contract Staffing</a>
+      <a onclick="showSubPage('vendor-mgmt')">Vendor Management</a>
+      <a onclick="showSubPage('workforce-dev')">Workforce Development</a>
+      <a onclick="showSubPage('industrial-eng')">Industrial Engineering</a>
+      <a onclick="showPage('expertise')">IT Services</a>
+      <a onclick="showPage('expertise')">Health Management</a>
+    </div>
+  </div>
+
+  <!-- WHAT WE DO -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Talent Solutions Engineered<br>for Every Industry</h2>
+      <p class="section-desc">For over a decade, we have been the trusted staffing backbone of government departments, healthcare providers, IT companies, and industrial enterprises across India—with a sharp focus on Telangana and Andhra Pradesh.</p>
+
+      <div class="cards-grid cols-3">
+        <div class="card" onclick="showSubPage('permanent-staffing')">
+          <div class="card-icon navy">🎯</div>
+          <h3>Permanent Staffing</h3>
+          <p>We source, screen, and place permanent hires who stay—through rigorous background verification, skill mapping, and cultural fit analysis.</p>
+          <div class="card-link">Learn more <span class="card-arrow">→</span></div>
+        </div>
+        <div class="card" onclick="showSubPage('contract-staffing')">
+          <div class="card-icon gold">📋</div>
+          <h3>Contract Staffing</h3>
+          <p>Flexible, compliant, and scalable. Our contract manpower solutions ensure you have the right people at the right time—with full ESI, EPF, and GST compliance.</p>
+          <div class="card-link">Learn more <span class="card-arrow">→</span></div>
+        </div>
+        <div class="card" onclick="showSubPage('vendor-mgmt')">
+          <div class="card-icon teal">🔗</div>
+          <h3>Vendor Management</h3>
+          <p>Streamlined multi-vendor coordination—one single point of accountability for your entire workforce supply chain, reducing friction and cost.</p>
+          <div class="card-link">Learn more <span class="card-arrow">→</span></div>
+        </div>
+        <div class="card" onclick="showSubPage('workforce-dev')">
+          <div class="card-icon navy">🚀</div>
+          <h3>Workforce Development</h3>
+          <p>Our Hire–Train–Deploy model transforms raw talent into job-ready professionals, custom-trained for your exact requirements.</p>
+          <div class="card-link">Learn more <span class="card-arrow">→</span></div>
+        </div>
+        <div class="card" onclick="showSubPage('industrial-eng')">
+          <div class="card-icon gold">⚙️</div>
+          <h3>Industrial Engineering Services</h3>
+          <p>End-to-end engineering manpower for manufacturing, infrastructure, and technical operations—qualified, certified, and ready to perform.</p>
+          <div class="card-link">Learn more <span class="card-arrow">→</span></div>
+        </div>
+        <div class="card" onclick="showPage('expertise')">
+          <div class="card-icon teal">💡</div>
+          <h3>Managed IT & Health Services</h3>
+          <p>Specialized IT augmentation and healthcare staffing—from software developers and system administrators to nurses and lab technicians.</p>
+          <div class="card-link">Explore expertise <span class="card-arrow">→</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE SEARCH -->
+  <div class="bg-off">
+    <div style="max-width:1200px;margin:0 auto;padding:5rem 2rem;">
+      <div class="section-label">Our Methodology</div>
+      <h2 class="section-title">How We Find, Vet & Deploy<br>the Right Talent</h2>
+      <p class="section-desc">Our proprietary search-and-match process is built on three pillars: skill precision, cultural relatability, and unwavering trust.</p>
+      <div class="process-steps" style="margin-top:3rem;background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <h4>Deep Skill Mapping</h4>
+          <p>We go beyond resumes—technical assessments, scenario tests, and domain interviews to validate true capability.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <h4>Relatability Screening</h4>
+          <p>We assess soft skills, team-fit, communication, and work-culture alignment to ensure long-term retention.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <h4>Trust Verification</h4>
+          <p>Criminal background checks, reference validation, education verification, and employment history audits—zero compromise.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <h4>Compliant Deployment</h4>
+          <p>Full statutory compliance—ESI, EPF, PT, GST—with transparent documentation and on-time salary disbursement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERTISE TEASER -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Areas of Expertise</div>
+      <h2 class="section-title">Deep Domain Capabilities<br>Across Key Sectors</h2>
+      <div class="cards-grid cols-2" style="margin-top:2.5rem;">
+        <div class="highlight-box" onclick="showPage('expertise')" style="cursor:pointer;">
+          <blockquote>"IT staffing is not just about code—it's about finding the right engineer who thinks like your business."</blockquote>
+          <div class="highlight-meta">→ IT Services: Augmentation · Web · Database · Dev · ODC</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div class="card" onclick="showPage('expertise')">
+            <div class="card-icon teal">🏥</div>
+            <h3>Health Management</h3>
+            <p>Nurses, environmental specialists, lab technicians—deployed to hospitals, clinics, and government health departments with clinical precision.</p>
+          </div>
+          <div class="card" onclick="showPage('services')">
+            <div class="card-icon navy">🖥️</div>
+            <h3>Managed Services</h3>
+            <p>Application management, data center ops, telecom support, infrastructure services, and end-user support—delivered as one unified service.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS SECTION -->
+  <div class="clients-section">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-label">Trusted By</div>
+      <h2 class="section-title" style="font-size:1.8rem;">Our Clients Span Government,<br>Healthcare & Enterprise</h2>
+      <div class="clients-grid">
+        <div class="client-chip gov">General Administration Dept. – Telangana</div>
+        <div class="client-chip gov">Telangana Secretariat</div>
+        <div class="client-chip gov">Govt. of Andhra Pradesh Depts.</div>
+        <div class="client-chip">Public Healthcare Institutions</div>
+        <div class="client-chip">IT & Software Companies</div>
+        <div class="client-chip">Infrastructure Firms</div>
+        <div class="client-chip">Telecom Service Providers</div>
+        <div class="client-chip">Educational Institutions</div>
+        <div class="client-chip">Manufacturing & Industrial Units</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="section-inner">
+      <h2>Ready to Build Your Dream Team?</h2>
+      <p>Let's talk about your manpower needs. Our experts are just one call away.</p>
+      <button class="btn-primary" onclick="showPage('contact')">Get in Touch Today →</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div class="nav-logo-mark">GC</div>
+            <div>
+              <div style="color:var(--white);font-size:15px;font-weight:600;">Global Contractors Group</div>
+              <div style="color:var(--gold-light);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;">End-to-End Manpower Services</div>
+            </div>
+          </div>
+          <p>Headquartered in Kothapet, Hyderabad. Serving government and corporate clients across Telangana, Andhra Pradesh, and Pan-India for over 10 years.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a onclick="showSubPage('permanent-staffing')">Permanent Staffing</a></li>
+            <li><a onclick="showSubPage('contract-staffing')">Contract Staffing</a></li>
+            <li><a onclick="showSubPage('vendor-mgmt')">Vendor Management</a></li>
+            <li><a onclick="showSubPage('workforce-dev')">Workforce Development</a></li>
+            <li><a onclick="showSubPage('industrial-eng')">Industrial Engineering</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Expertise</h4>
+          <ul>
+            <li><a onclick="showPage('expertise')">IT Staffing & Augmentation</a></li>
+            <li><a onclick="showPage('expertise')">Health Management</a></li>
+            <li><a onclick="showPage('expertise')">Hire Train & Deploy</a></li>
+            <li><a onclick="showPage('services')">Managed Services</a></li>
+            <li><a onclick="showPage('services')">Offshore Dev Center</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a onclick="showPage('leadership')">Leadership Team</a></li>
+            <li><a onclick="showPage('leadership')">Vision & Mission</a></li>
+            <li><a onclick="showPage('contact')">Contact Us</a></li>
+            <li><a onclick="showPage('home')">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Global Contractors Group, Kothapet, Hyderabad, Telangana. All rights reserved.</div>
+        <div>GST · ESI · EPF Compliant · Registered Manpower Agency</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- =================== TALENT SOLUTIONS PAGE =================== -->
+<div id="page-solutions" class="page">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Talent Solutions</div>
+      <h1>Talent Solutions</h1>
+      <p>Strategic staffing services that power India's most demanding organizations—built on skill, trust, and deep regional expertise.</p>
+    </div>
+  </div>
+
+  <div class="product-nav-bar">
+    <div class="product-nav-inner">
+      <a onclick="showSubPage('permanent-staffing')">Permanent Staffing</a>
+      <a onclick="showSubPage('contract-staffing')">Contract Staffing</a>
+      <a onclick="showSubPage('vendor-mgmt')">Vendor Management</a>
+      <a onclick="showSubPage('workforce-dev')">Workforce Development</a>
+      <a onclick="showSubPage('industrial-eng')">Industrial Engineering</a>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Our Story</div>
+      <h2 class="section-title">A Decade of Deploying<br>Right-Fit Talent Across India</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2rem;" class="two-col">
+        <div>
+          <p style="color:var(--text-mid);margin-bottom:1rem;font-size:1.05rem;line-height:1.8;">
+            Since our founding in Hyderabad, Global Contractors Group has grown into one of Telangana's most reliable manpower agencies. We started with a single mission: <strong>connect the right person with the right opportunity</strong>—and that mission hasn't changed, even as we've scaled to serve 50+ clients across Telangana, Andhra Pradesh, and beyond.
+          </p>
+          <p style="color:var(--text-mid);margin-bottom:1rem;font-size:1.05rem;line-height:1.8;">
+            Our decade of on-the-ground experience in the Telangana and AP talent markets gives us an irreplaceable edge. We don't just pull from databases—we've built genuine relationships with talent communities, training institutions, and industry networks that allow us to find candidates others can't.
+          </p>
+          <p style="color:var(--text-mid);font-size:1.05rem;line-height:1.8;">
+            Whether you need one senior specialist or 200 contract workers tomorrow morning, our team moves with speed, precision, and full statutory compliance—ESI, EPF, and GST covered, every time.
+          </p>
+        </div>
+        <div class="feature-visual">
+          <h3>Our Talent Search Framework</h3>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.95rem;margin-bottom:1.5rem;">Three lenses. Zero compromise.</p>
+          <div style="display:flex;flex-direction:column;gap:1rem;position:relative;z-index:1;">
+            <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:1.25rem;">
+              <div style="color:var(--gold-light);font-weight:600;margin-bottom:4px;">🎯 Skill Precision</div>
+              <div style="color:rgba(255,255,255,0.6);font-size:0.9rem;">Technical tests, domain simulations, certifications reviewed. We match role requirements with verified competencies—not guesswork.</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:1.25rem;">
+              <div style="color:var(--gold-light);font-weight:600;margin-bottom:4px;">🤝 Relatability Fit</div>
+              <div style="color:rgba(255,255,255,0.6);font-size:0.9rem;">Behavioral interviews, communication assessments, and team-culture alignment—because skills without fit create attrition.</div>
+            </div>
+            <div style="background:rgba(255,255,255,0.07);border-radius:8px;padding:1.25rem;">
+              <div style="color:var(--gold-light);font-weight:600;margin-bottom:4px;">🛡️ Deep Trust Verification</div>
+              <div style="color:rgba(255,255,255,0.6);font-size:0.9rem;">Background checks, criminal records, reference calls, and education audits—your organization's integrity is our responsibility.</div>
+            </div>
+          </div>
+          <div class="stat-row" style="margin-top:1.5rem;">
+            <div class="stat-item"><div class="stat-num">94%</div><div class="stat-lab">Retention rate at 1 year</div></div>
+            <div class="stat-item"><div class="stat-num">48hr</div><div class="stat-lab">Avg. deployment time</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUB-SERVICE CARDS -->
+  <div class="bg-off">
+    <section>
+      <div class="section-inner">
+        <div class="section-label">Products</div>
+        <h2 class="section-title">Choose the Right Staffing Model</h2>
+        <div class="cards-grid cols-3" style="margin-top:2rem;">
+          <div class="card" onclick="showSubPage('permanent-staffing')">
+            <div class="card-icon navy">🎯</div>
+            <h3>Permanent Staffing</h3>
+            <p>Full-time, permanent placements across all levels—from entry grade to senior leadership. Guaranteed background-verified, culture-aligned candidates.</p>
+            <div class="card-link">View Details →</div>
+          </div>
+          <div class="card" onclick="showSubPage('contract-staffing')">
+            <div class="card-icon gold">📋</div>
+            <h3>Contract Staffing</h3>
+            <p>Deploy talent on short-term or project contracts. We handle payroll, compliance, and HR—you focus on output. Perfect for government and seasonal projects.</p>
+            <div class="card-link">View Details →</div>
+          </div>
+          <div class="card" onclick="showSubPage('vendor-mgmt')">
+            <div class="card-icon teal">🔗</div>
+            <h3>Vendor Management</h3>
+            <p>Single-window management for multiple staffing vendors. Standardized SLAs, consolidated billing, and one relationship to manage it all.</p>
+            <div class="card-link">View Details →</div>
+          </div>
+          <div class="card" onclick="showSubPage('workforce-dev')">
+            <div class="card-icon navy">🚀</div>
+            <h3>Workforce Development</h3>
+            <p>Hire–Train–Deploy pipelines that produce certified, job-ready talent from India's vast pool—customized to your exact operational needs.</p>
+            <div class="card-link">View Details →</div>
+          </div>
+          <div class="card" onclick="showSubPage('industrial-eng')">
+            <div class="card-icon gold">⚙️</div>
+            <h3>Industrial Engineering Services</h3>
+            <p>Specialized technical staffing for manufacturing, plant operations, quality control, and industrial project execution.</p>
+            <div class="card-link">View Details →</div>
+          </div>
+          <div class="card" onclick="showPage('expertise')">
+            <div class="card-icon teal">💼</div>
+            <h3>Outsourcing & Managed Services</h3>
+            <p>IT application management, data center operations, telecom support, and end-user services—delivered under managed SLAs.</p>
+            <div class="card-link">Explore Expertise →</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- CLIENTS + FOOTER -->
+  <div class="clients-section">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-label">Our Clients</div>
+      <h2 class="section-title" style="font-size:1.6rem;">Trusted Across Sectors</h2>
+      <div class="clients-grid">
+        <div class="client-chip gov">General Administration Dept. – Telangana</div>
+        <div class="client-chip gov">Telangana Secretariat</div>
+        <div class="client-chip gov">Govt. of AP Departments</div>
+        <div class="client-chip">Healthcare Institutions</div>
+        <div class="client-chip">IT & Software Companies</div>
+        <div class="client-chip">Infrastructure Contractors</div>
+        <div class="client-chip">Telecom Operators</div>
+        <div class="client-chip">Industrial & Manufacturing</div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-banner">
+    <h2>Need Manpower Fast?</h2>
+    <p>Our team deploys verified talent within 48 hours of a confirmed requirement.</p>
+    <button class="btn-primary" onclick="showPage('contact')">Start a Conversation →</button>
+  </div>
+</div>
+
+<!-- =================== EXPERTISE PAGE =================== -->
+<div id="page-expertise" class="page">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Expertise</div>
+      <h1>Domain Expertise</h1>
+      <p>Four verticals. One trusted partner. Deep, specialized talent solutions for IT, Healthcare, Training, and Managed Services.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-inner">
+      <div class="tab-nav">
+        <button class="tab-btn active" onclick="showTab('it-services')">IT Services</button>
+        <button class="tab-btn" onclick="showTab('health-mgmt')">Health Management</button>
+        <button class="tab-btn" onclick="showTab('hire-train')">Hire Train & Deploy</button>
+        <button class="tab-btn" onclick="showTab('managed-svc')">Managed Services</button>
+      </div>
+
+      <!-- IT SERVICES TAB -->
+      <div id="tab-it-services" class="tab-panel active">
+        <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start;" class="two-col">
+          <div>
+            <div class="section-label">IT Services</div>
+            <h2 class="section-title" style="font-size:2rem;">Powering Digital India<br>with Top-Tier IT Talent</h2>
+            <p style="color:var(--text-mid);margin-bottom:1.5rem;line-height:1.8;">
+              Technology never sleeps—and neither does our IT talent pipeline. Global Contractors Group provides scalable IT staffing and solutions that keep your technology operations running at peak performance, whether you need one specialist or an entire offshore development center.
+            </p>
+            <p style="color:var(--text-mid);margin-bottom:1.5rem;line-height:1.8;">
+              We source from India's top engineering colleges, bootcamps, and experienced professional networks—rigorously vetted, technically tested, and client-ready from day one.
+            </p>
+            <div class="sector-badges">
+              <div class="badge featured">IT Staffing Augmentation</div>
+              <div class="badge">Webpage Designing</div>
+              <div class="badge">Database Management</div>
+              <div class="badge">Application Development</div>
+              <div class="badge">System Implementation</div>
+              <div class="badge">Offshore Development Center</div>
+            </div>
+          </div>
+          <div>
+            <div class="cards-grid cols-2" style="grid-template-columns:1fr 1fr;margin-top:0;">
+              <div class="card">
+                <div class="card-icon navy">👨‍💻</div>
+                <h3>IT Staffing Augmentation</h3>
+                <p>Scale your tech team instantly with pre-vetted developers, architects, QA engineers, and project managers.</p>
+              </div>
+              <div class="card">
+                <div class="card-icon gold">🌐</div>
+                <h3>Webpage Designing</h3>
+                <p>UI/UX designers and front-end engineers who craft fast, responsive, visually compelling digital experiences.</p>
+              </div>
+              <div class="card">
+                <div class="card-icon teal">🗄️</div>
+                <h3>Database Management</h3>
+                <p>DBA professionals for Oracle, MySQL, SQL Server, PostgreSQL—performance tuning, migration, and security.</p>
+              </div>
+              <div class="card">
+                <div class="card-icon navy">📱</div>
+                <h3>Application Development</h3>
+                <p>Full-stack, mobile, and enterprise application developers managed end-to-end on your project timeline.</p>
+              </div>
+              <div class="card">
+                <div class="card-icon gold">🔧</div>
+                <h3>System Implementation</h3>
+                <p>ERP, CRM, and enterprise system rollouts—our specialists handle configuration, training, and go-live support.</p>
+              </div>
+              <div class="card">
+                <div class="card-icon teal">🏢</div>
+                <h3>Offshore Dev Center</h3>
+                <p>Build your dedicated ODC in Hyderabad—infrastructure, talent, compliance, and management handled by us.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HEALTH MANAGEMENT TAB -->
+      <div id="tab-health-mgmt" class="tab-panel">
+        <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:4rem;align-items:start;" class="two-col">
+          <div>
+            <div class="section-label">Health Management</div>
+            <h2 class="section-title" style="font-size:2rem;">Compassionate Care<br>Starts with the Right Staff</h2>
+            <p style="color:var(--text-mid);margin-bottom:1.5rem;line-height:1.8;">
+              Healthcare staffing is unlike any other—it demands not just qualification, but character. Our Health Management vertical specializes in deploying clinically trained, character-verified professionals to hospitals, clinics, government health departments, and diagnostic labs.
+            </p>
+            <p style="color:var(--text-mid);margin-bottom:1.5rem;line-height:1.8;">
+              From Registered Nurses to specialized environmental health officers and niche lab technicians, we ensure every professional we place meets the clinical standards and the human qualities that patient care demands.
+            </p>
+            <ul class="service-list">
+              <li><span class="s-dot"></span>Registered Nurses & Staff Nurses (GNM, B.Sc, M.Sc)</li>
+              <li><span class="s-dot"></span>Environmental Health Specialists</li>
+              <li><span class="s-dot"></span>Specialized Lab Technicians (DMLT, B.MLT)</li>
+              <li><span class="s-dot"></span>Radiologists & Imaging Technicians</li>
+              <li><span class="s-dot"></span>Hospital Administrative Staff</li>
+              <li><span class="s-dot"></span>Paramedical & Support Staff</li>
+            </ul>
+          </div>
+          <div class="feature-visual" style="background:var(--accent-teal);">
+            <h3 style="color:var(--white);">Why Our Healthcare Staffing Stands Apart</h3>
+            <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem;position:relative;z-index:1;">
+              <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:1.25rem;">
+                <div style="color:rgba(255,255,255,0.9);font-weight:600;margin-bottom:4px;">Clinical Credential Verification</div>
+                <div style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Every nursing and clinical certification verified directly with issuing bodies—no shortcuts.</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:1.25rem;">
+                <div style="color:rgba(255,255,255,0.9);font-weight:600;margin-bottom:4px;">Character & Empathy Assessment</div>
+                <div style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Structured behavioral interviews assess bedside manner, stress response, and patient empathy.</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:1.25rem;">
+                <div style="color:rgba(255,255,255,0.9);font-weight:600;margin-bottom:4px;">Rapid Deployment Protocol</div>
+                <div style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Emergency staffing needs met within 24 hours—our pre-cleared talent pool is always deployment-ready.</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.1);border-radius:8px;padding:1.25rem;">
+                <div style="color:rgba(255,255,255,0.9);font-weight:600;margin-bottom:4px;">Government Health Dept. Experience</div>
+                <div style="color:rgba(255,255,255,0.65);font-size:0.9rem;">Deep familiarity with Telangana & AP government health department protocols, pay structures, and compliance.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HIRE TRAIN DEPLOY TAB -->
+      <div id="tab-hire-train" class="tab-panel">
+        <div class="section-label">Hire · Train · Deploy</div>
+        <h2 class="section-title" style="font-size:2rem;">We Don't Just Source Talent—<br>We Create It.</h2>
+        <p style="color:var(--text-mid);max-width:680px;margin-bottom:3rem;font-size:1.05rem;line-height:1.8;">
+          India has vast raw talent. The challenge is bridging the gap between potential and performance. Our Hire–Train–Deploy program does exactly that—identifying high-potential candidates, training them to your exact job requirements, and deploying them with confidence.
+        </p>
+        <div class="cards-grid cols-3">
+          <div style="background:var(--navy);border-radius:8px;padding:2rem;color:var(--white);">
+            <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:var(--gold-light);">01</div>
+            <h3 style="color:var(--white);margin-bottom:0.75rem;">Hire</h3>
+            <p style="color:rgba(255,255,255,0.65);font-size:0.95rem;line-height:1.7;">We identify candidates with the right aptitude, attitude, and foundational skills—from campuses, job fairs, walk-ins, and our active talent database across Telangana and AP.</p>
+            <ul style="list-style:none;margin-top:1rem;">
+              <li style="color:rgba(255,255,255,0.5);font-size:0.85rem;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.1);">✦ Aptitude & psychometric testing</li>
+              <li style="color:rgba(255,255,255,0.5);font-size:0.85rem;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.1);">✦ Background & criminal verification</li>
+              <li style="color:rgba(255,255,255,0.5);font-size:0.85rem;padding:6px 0;">✦ Reference & education audit</li>
+            </ul>
+          </div>
+          <div style="background:var(--gold);border-radius:8px;padding:2rem;">
+            <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:var(--navy);">02</div>
+            <h3 style="color:var(--navy);margin-bottom:0.75rem;">Train</h3>
+            <p style="color:rgba(10,22,40,0.75);font-size:0.95rem;line-height:1.7;">Client-customized training programs—technical, soft skills, compliance, and role-specific simulations—designed in close partnership with your team's actual requirements.</p>
+            <ul style="list-style:none;margin-top:1rem;">
+              <li style="color:rgba(10,22,40,0.6);font-size:0.85rem;padding:6px 0;border-bottom:1px solid rgba(10,22,40,0.1);">✦ Role-specific technical training</li>
+              <li style="color:rgba(10,22,40,0.6);font-size:0.85rem;padding:6px 0;border-bottom:1px solid rgba(10,22,40,0.1);">✦ Communication & workplace skills</li>
+              <li style="color:rgba(10,22,40,0.6);font-size:0.85rem;padding:6px 0;">✦ Compliance & safety orientation</li>
+            </ul>
+          </div>
+          <div style="background:var(--accent-teal);border-radius:8px;padding:2rem;">
+            <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:rgba(255,255,255,0.3);">03</div>
+            <h3 style="color:var(--white);margin-bottom:0.75rem;">Deploy</h3>
+            <p style="color:rgba(255,255,255,0.75);font-size:0.95rem;line-height:1.7;">Job-ready, fully compliant professionals placed precisely where they're needed—with ongoing support, performance tracking, and re-training options if requirements evolve.</p>
+            <ul style="list-style:none;margin-top:1rem;">
+              <li style="color:rgba(255,255,255,0.55);font-size:0.85rem;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.1);">✦ On-site onboarding support</li>
+              <li style="color:rgba(255,255,255,0.55);font-size:0.85rem;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.1);">✦ 90-day performance review</li>
+              <li style="color:rgba(255,255,255,0.55);font-size:0.85rem;padding:6px 0;">✦ Replacement guarantee</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- MANAGED SERVICES TAB -->
+      <div id="tab-managed-svc" class="tab-panel">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;" class="two-col">
+          <div>
+            <div class="section-label">Managed Services</div>
+            <h2 class="section-title" style="font-size:2rem;">Operate Smarter with<br>Fully Managed Solutions</h2>
+            <p style="color:var(--text-mid);margin-bottom:1.5rem;line-height:1.8;">
+              Our Managed Services go beyond staffing—we take full operational ownership of your technology and infrastructure functions, delivering predictable service levels, cost efficiency, and expert execution under one managed SLA.
+            </p>
+            <ul class="service-list">
+              <li><span class="s-dot"></span><div><strong>Application Management</strong> — Maintenance, upgrade, bug-fix, and 24/7 support for enterprise applications</div></li>
+              <li><span class="s-dot"></span><div><strong>Data Center Operations</strong> — Physical and virtual data center management, monitoring, and DR planning</div></li>
+              <li><span class="s-dot"></span><div><strong>Telecom Support</strong> — NOC services, network monitoring, troubleshooting for telecom infrastructure</div></li>
+              <li><span class="s-dot"></span><div><strong>Infrastructure Managed Services</strong> — Servers, networks, storage, cloud—proactively managed for maximum uptime</div></li>
+              <li><span class="s-dot"></span><div><strong>End User Support Services</strong> — L1/L2/L3 helpdesk, desktop support, and ITSM-aligned service delivery</div></li>
+            </ul>
+          </div>
+          <div>
+            <div class="highlight-box">
+              <blockquote style="font-size:1.25rem;">"When you partner with Global Contractors for managed services, you don't just get staff—you get accountability, SLAs, and a team that owns the outcome."</blockquote>
+              <div class="highlight-meta">— Global Contractors Group, Service Commitment</div>
+            </div>
+            <div style="margin-top:1.5rem;background:var(--off-white);border-radius:8px;padding:1.5rem;border:1px solid var(--border);">
+              <h4 style="color:var(--navy);margin-bottom:1rem;">Why Managed Services with GCG?</h4>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                <div style="text-align:center;padding:1rem;background:var(--white);border-radius:6px;border:1px solid var(--border);">
+                  <div style="font-size:1.8rem;font-weight:900;color:var(--gold);font-family:'Playfair Display',serif;">99.5%</div>
+                  <div style="font-size:12px;color:var(--text-light);">SLA uptime commitment</div>
+                </div>
+                <div style="text-align:center;padding:1rem;background:var(--white);border-radius:6px;border:1px solid var(--border);">
+                  <div style="font-size:1.8rem;font-weight:900;color:var(--gold);font-family:'Playfair Display',serif;">24/7</div>
+                  <div style="font-size:12px;color:var(--text-light);">Monitoring & support</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="clients-section">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-label">Our Clients</div>
+      <h2 class="section-title" style="font-size:1.6rem;">Powering Clients Across Sectors</h2>
+      <div class="clients-grid">
+        <div class="client-chip gov">GAD – Telangana Secretariat</div>
+        <div class="client-chip gov">Govt. of AP Depts.</div>
+        <div class="client-chip">Healthcare Institutions</div>
+        <div class="client-chip">IT & Software Companies</div>
+        <div class="client-chip">Telecom Service Providers</div>
+        <div class="client-chip">Data Center Operators</div>
+        <div class="client-chip">Infrastructure Companies</div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-banner">
+    <h2>Find the Right Expertise for Your Business</h2>
+    <p>Talk to our domain specialists—IT, Healthcare, Training, or Managed Services.</p>
+    <button class="btn-primary" onclick="showPage('contact')">Schedule a Consultation →</button>
+  </div>
+</div>
+
+<!-- =================== SERVICES PAGE =================== -->
+<div id="page-services" class="page">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Services</div>
+      <h1>Outsourcing & Managed Services</h1>
+      <p>Comprehensive outsourcing solutions that let you focus on your core business while we expertly manage the rest.</p>
+    </div>
+  </div>
+  <section>
+    <div class="section-inner">
+      <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+        <div>
+          <div class="section-label">Outsourcing Services</div>
+          <h2 class="section-title" style="font-size:2rem;">Your Growth, Our Responsibility</h2>
+          <p style="color:var(--text-mid);margin-bottom:2rem;line-height:1.8;">We handle the operational complexity so you can focus on strategy. Our outsourcing services are structured, SLA-driven, and deeply integrated with your workflows—delivering real outcomes, not just headcount.</p>
+          <div class="cards-grid" style="grid-template-columns:1fr;margin-top:0;gap:1rem;">
+            <div class="card" style="padding:1.5rem;">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:0.75rem;">
+                <div class="card-icon navy" style="width:36px;height:36px;font-size:16px;">🖥️</div>
+                <h3 style="font-size:1rem;">Application Management</h3>
+              </div>
+              <p>End-to-end management of your business applications—monitoring, updates, incident resolution, and user support on defined SLAs.</p>
+            </div>
+            <div class="card" style="padding:1.5rem;">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:0.75rem;">
+                <div class="card-icon gold" style="width:36px;height:36px;font-size:16px;">🏛️</div>
+                <h3 style="font-size:1rem;">Data Center Management</h3>
+              </div>
+              <p>Physical and virtual data center operations—server management, storage, backup, disaster recovery, and capacity planning.</p>
+            </div>
+            <div class="card" style="padding:1.5rem;">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:0.75rem;">
+                <div class="card-icon teal" style="width:36px;height:36px;font-size:16px;">📡</div>
+                <h3 style="font-size:1rem;">Telecom Support</h3>
+              </div>
+              <p>NOC operations, network monitoring, fault resolution, and telecom infrastructure support for BSNL, private carriers, and enterprise networks.</p>
+            </div>
+            <div class="card" style="padding:1.5rem;">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:0.75rem;">
+                <div class="card-icon navy" style="width:36px;height:36px;font-size:16px;">🔌</div>
+                <h3 style="font-size:1rem;">Infrastructure Managed Services</h3>
+              </div>
+              <p>Holistic infrastructure management—servers, network, storage, cloud environments—with proactive monitoring and zero-downtime targets.</p>
+            </div>
+            <div class="card" style="padding:1.5rem;">
+              <div style="display:flex;align-items:center;gap:12px;margin-bottom:0.75rem;">
+                <div class="card-icon gold" style="width:36px;height:36px;font-size:16px;">🙋</div>
+                <h3 style="font-size:1rem;">End User Support Services</h3>
+              </div>
+              <p>L1, L2, and L3 helpdesk staffing and management—remote and on-site support, ITSM tools integration, and CSAT-driven delivery.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="feature-visual" style="margin-bottom:1.5rem;">
+            <h3>Government Outsourcing Expertise</h3>
+            <p style="color:rgba(255,255,255,0.65);margin-top:0.75rem;font-size:0.95rem;line-height:1.7;">We hold a unique position as one of Telangana's most experienced outsourcing agencies for government departments. Our deep understanding of government procurement processes, G.O. compliance, and departmental workflows makes us the preferred partner for state and central government agencies.</p>
+            <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;position:relative;z-index:1;">
+              <div style="background:rgba(255,255,255,0.08);padding:10px 16px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.8);">G.O.Rt.No.4271 Compliant</div>
+              <div style="background:rgba(255,255,255,0.08);padding:10px 16px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.8);">G.O.Ms.No.60 & 63</div>
+              <div style="background:rgba(255,255,255,0.08);padding:10px 16px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.8);">ESI · EPF · GST</div>
+              <div style="background:rgba(255,255,255,0.08);padding:10px 16px;border-radius:6px;font-size:13px;color:rgba(255,255,255,0.8);">Registered Agency</div>
+            </div>
+          </div>
+          <div style="background:var(--off-white);border:1px solid var(--border);border-radius:8px;padding:2rem;">
+            <h3 style="font-size:1.2rem;color:var(--navy);margin-bottom:1.25rem;">Service Delivery Model</h3>
+            <div class="process-steps" style="grid-template-columns:1fr;border:none;">
+              <div class="process-step" style="border-right:none;border-bottom:1px solid var(--border);padding:1rem 0;">
+                <div style="display:flex;gap:12px;align-items:flex-start;">
+                  <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--gold-pale);line-height:1;flex-shrink:0;">1</div>
+                  <div><h4 style="font-size:0.95rem;margin-bottom:4px;">Requirement Assessment</h4><p style="font-size:0.85rem;color:var(--text-light);">Deep-dive into your service scope, SLA expectations, and operational context.</p></div>
+                </div>
+              </div>
+              <div class="process-step" style="border-right:none;border-bottom:1px solid var(--border);padding:1rem 0;">
+                <div style="display:flex;gap:12px;align-items:flex-start;">
+                  <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--gold-pale);line-height:1;flex-shrink:0;">2</div>
+                  <div><h4 style="font-size:0.95rem;margin-bottom:4px;">Team Assembly</h4><p style="font-size:0.85rem;color:var(--text-light);">Skill-matched team assembled, trained on your systems, and onboarded.</p></div>
+                </div>
+              </div>
+              <div class="process-step" style="border-right:none;border-bottom:1px solid var(--border);padding:1rem 0;">
+                <div style="display:flex;gap:12px;align-items:flex-start;">
+                  <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--gold-pale);line-height:1;flex-shrink:0;">3</div>
+                  <div><h4 style="font-size:0.95rem;margin-bottom:4px;">Go-Live & Transition</h4><p style="font-size:0.85rem;color:var(--text-light);">Smooth handover with zero disruption—knowledge transfer and parallel-run period included.</p></div>
+                </div>
+              </div>
+              <div class="process-step" style="border-right:none;padding:1rem 0;">
+                <div style="display:flex;gap:12px;align-items:flex-start;">
+                  <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--gold-pale);line-height:1;flex-shrink:0;">4</div>
+                  <div><h4 style="font-size:0.95rem;margin-bottom:4px;">Continuous Improvement</h4><p style="font-size:0.85rem;color:var(--text-light);">Monthly reviews, SLA reporting, and proactive optimization of service delivery.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="clients-section">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-label">Current Clients</div>
+      <div class="clients-grid">
+        <div class="client-chip gov">GAD – Telangana</div>
+        <div class="client-chip gov">Telangana Secretariat</div>
+        <div class="client-chip gov">AP Government Depts.</div>
+        <div class="client-chip">IT Companies</div>
+        <div class="client-chip">Telecom Operators</div>
+        <div class="client-chip">Infrastructure Firms</div>
+        <div class="client-chip">Healthcare Institutions</div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-banner">
+    <h2>Ready to Outsource with Confidence?</h2>
+    <p>Let us take ownership of your operations—so your team can focus on what matters most.</p>
+    <button class="btn-primary" onclick="showPage('contact')">Get a Custom Quote →</button>
+  </div>
+</div>
+
+<!-- =================== LEADERSHIP PAGE =================== -->
+<div id="page-leadership" class="page">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Leadership</div>
+      <h1>Leadership, Vision & Mission</h1>
+      <p>The people and principles behind 10 years of trust, growth, and transformation in India's manpower sector.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Our Leaders</div>
+      <h2 class="section-title">The Team That Builds Teams</h2>
+      <p class="section-desc">Our leadership brings together deep expertise in HR, technology, government relations, and business operations—united by a singular passion for connecting great people with great opportunities.</p>
+      <div class="cards-grid cols-3" style="margin-top:2.5rem;">
+        <div class="leader-card">
+          <div class="leader-avatar">MD</div>
+          <div class="leader-name">Managing Director</div>
+          <div class="leader-title">Founder & Visionary Leader</div>
+          <div class="leader-bio">With over 15 years in manpower consulting and a deep network across Telangana's government and corporate ecosystem, our MD built Global Contractors Group from the ground up with a commitment to ethical, compliant, and impactful staffing.</div>
+        </div>
+        <div class="leader-card">
+          <div class="leader-avatar">OD</div>
+          <div class="leader-name">Operations Director</div>
+          <div class="leader-title">Head of Delivery & Compliance</div>
+          <div class="leader-bio">A seasoned operations leader with expertise in large-scale manpower deployment, statutory compliance management, and government project execution across Telangana and Andhra Pradesh.</div>
+        </div>
+        <div class="leader-card">
+          <div class="leader-avatar">TD</div>
+          <div class="leader-name">Technical Director</div>
+          <div class="leader-title">Head of IT & Managed Services</div>
+          <div class="leader-bio">Leading our technology vertical with 12+ years in IT staffing, offshore development, and managed services delivery—building bridges between India's tech talent and global business requirements.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION VISION -->
+  <div class="bg-off">
+    <section>
+      <div class="section-inner">
+        <div class="section-label">Purpose & Direction</div>
+        <h2 class="section-title">Our Mission, Vision & Values</h2>
+        <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem;">
+          <div class="mission-card">
+            <h3>🎯 Our Mission</h3>
+            <p>To be India's most trusted manpower solutions partner—delivering skill-matched, background-verified, and compliance-first talent that powers government institutions, healthcare providers, and businesses to perform at their best. We exist to create employment, build careers, and strengthen organizations—simultaneously.</p>
+          </div>
+          <div class="mission-card teal-top">
+            <h3>🔭 Our Vision for 2035</h3>
+            <p>To expand our footprint from Telangana and Andhra Pradesh to become a Pan-India leader in specialized staffing and managed services—operating across 10 states, deploying 10,000+ professionals annually, and establishing Global Contractors Group as the benchmark for ethical, effective, and scalable manpower solutions in India.</p>
+          </div>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:2.5rem;margin-top:1.5rem;">
+          <h3 style="font-size:1.3rem;color:var(--navy);margin-bottom:1.5rem;">Our Core Values</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;">
+            <div style="text-align:center;padding:1.5rem 1rem;">
+              <div style="font-size:2rem;margin-bottom:0.75rem;">🛡️</div>
+              <h4 style="color:var(--navy);margin-bottom:0.5rem;">Integrity</h4>
+              <p style="font-size:0.88rem;color:var(--text-light);">Every placement, every contract, every invoice—transparent and honest.</p>
+            </div>
+            <div style="text-align:center;padding:1.5rem 1rem;">
+              <div style="font-size:2rem;margin-bottom:0.75rem;">⚡</div>
+              <h4 style="color:var(--navy);margin-bottom:0.5rem;">Excellence</h4>
+              <p style="font-size:0.88rem;color:var(--text-light);">We set the bar high and we clear it—every time, for every client.</p>
+            </div>
+            <div style="text-align:center;padding:1.5rem 1rem;">
+              <div style="font-size:2rem;margin-bottom:0.75rem;">🤝</div>
+              <h4 style="color:var(--navy);margin-bottom:0.5rem;">Partnership</h4>
+              <p style="font-size:0.88rem;color:var(--text-light);">We are not a vendor. We are a long-term growth partner invested in your success.</p>
+            </div>
+            <div style="text-align:center;padding:1.5rem 1rem;">
+              <div style="font-size:2rem;margin-bottom:0.75rem;">🌱</div>
+              <h4 style="color:var(--navy);margin-bottom:0.5rem;">Impact</h4>
+              <p style="font-size:0.88rem;color:var(--text-light);">We measure success in lives transformed and organizations strengthened.</p>
+            </div>
+            <div style="text-align:center;padding:1.5rem 1rem;">
+              <div style="font-size:2rem;margin-bottom:0.75rem;">📜</div>
+              <h4 style="color:var(--navy);margin-bottom:0.5rem;">Compliance</h4>
+              <p style="font-size:0.88rem;color:var(--text-light);">Statutory compliance is non-negotiable—for us and for every professional we deploy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 10 YEAR ROADMAP -->
+  <section>
+    <div class="section-inner">
+      <div class="section-label">Roadmap 2026–2035</div>
+      <h2 class="section-title">Our 10-Year Growth Journey</h2>
+      <p class="section-desc">From Hyderabad's heart to India's horizon—here is where we are headed.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot">2026</div>
+          <div class="timeline-content">
+            <h4>Strengthen Regional Dominance</h4>
+            <p>Deepen government and corporate relationships across Telangana and AP. Launch dedicated IT and Healthcare staffing divisions. Expand the Kothapet office and grow team strength by 40%.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">2027</div>
+          <div class="timeline-content">
+            <h4>Offshore Development Center Launch</h4>
+            <p>Establish a full-scale ODC in Hyderabad to serve national and international clients with dedicated development teams. Achieve ISO 9001 certification for quality management.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">2028</div>
+          <div class="timeline-content">
+            <h4>Pan-India Expansion – Phase 1</h4>
+            <p>Open regional offices in Maharashtra, Karnataka, and Tamil Nadu. Establish Hire–Train–Deploy centers in 3 states. Deploy 2,000+ professionals annually.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">2030</div>
+          <div class="timeline-content">
+            <h4>Technology-Driven Staffing Platform</h4>
+            <p>Launch a proprietary AI-powered talent matching platform. Offer self-service workforce management portals for enterprise clients. Scale to 5,000+ active deployments across India.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">2035</div>
+          <div class="timeline-content">
+            <h4>National Leadership & Global Reach</h4>
+            <p>Become India's top-5 outsourcing agency by revenue and deployment volume. Establish international partnerships for export of Indian talent to Gulf, South-East Asia, and beyond. 10,000+ professionals deployed annually.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="clients-section">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-label">Current Clients</div>
+      <div class="clients-grid">
+        <div class="client-chip gov">GAD – Telangana Secretariat</div>
+        <div class="client-chip gov">Govt. of AP Depts.</div>
+        <div class="client-chip">Healthcare Institutions</div>
+        <div class="client-chip">IT Companies</div>
+        <div class="client-chip">Infrastructure Firms</div>
+        <div class="client-chip">Industrial Clients</div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-banner">
+    <h2>Join Our Journey</h2>
+    <p>Be part of India's most trusted manpower group—as a client, partner, or talent.</p>
+    <button class="btn-primary" onclick="showPage('contact')">Let's Connect →</button>
+  </div>
+</div>
+
+<!-- =================== CONTACT PAGE =================== -->
+<div id="page-contact" class="page">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><span onclick="showPage('home')">Home</span> / Contact</div>
+      <h1>Let's Build Something<br>Great Together</h1>
+      <p>Reach out to our team for staffing requirements, partnerships, or any enquiries. We respond within 4 business hours.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">Head Office</div>
+              <div class="contact-val">Global Contractors Group<br>Kothapet, Hyderabad,<br>Telangana – 500 035, India</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">Phone</div>
+              <div class="contact-val">+91 40 XXXX XXXX<br>+91 98XXX XXXXX (Mobile)</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-val">info@globalcontractorsgroup.in<br>hr@globalcontractorsgroup.in</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <div class="contact-label">Business Hours</div>
+              <div class="contact-val">Monday – Saturday: 9:00 AM – 6:30 PM<br>Sunday: Emergency calls only</div>
+            </div>
+          </div>
+          <div style="background:var(--navy);border-radius:8px;padding:1.5rem;margin-top:1rem;">
+            <h4 style="color:var(--gold-light);margin-bottom:1rem;font-size:1rem;">Service Coverage</h4>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <div style="background:rgba(255,255,255,0.08);padding:6px 14px;border-radius:4px;font-size:13px;color:rgba(255,255,255,0.75);">Hyderabad</div>
+              <div style="background:rgba(255,255,255,0.08);padding:6px 14px;border-radius:4px;font-size:13px;color:rgba(255,255,255,0.75);">Telangana – All Districts</div>
+              <div style="background:rgba(255,255,255,0.08);padding:6px 14px;border-radius:4px;font-size:13px;color:rgba(255,255,255,0.75);">Andhra Pradesh</div>
+              <div style="background:rgba(255,255,255,0.08);padding:6px 14px;border-radius:4px;font-size:13px;color:rgba(255,255,255,0.75);">Pan-India (On Request)</div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3 style="font-size:1.4rem;color:var(--navy);margin-bottom:1.5rem;">Send Us a Message</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label>Organisation</label>
+              <input type="text" placeholder="Company / Department">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" placeholder="+91 XXXXX XXXXX">
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" placeholder="your@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Service Required</label>
+            <select>
+              <option value="">Select a service…</option>
+              <option>Permanent Staffing</option>
+              <option>Contract Staffing</option>
+              <option>Vendor Management</option>
+              <option>Workforce Development (HTD)</option>
+              <option>Industrial Engineering Services</option>
+              <option>IT Staffing & Augmentation</option>
+              <option>Health Management Staffing</option>
+              <option>Managed IT Services</option>
+              <option>Outsourcing Services</option>
+              <option>Offshore Development Center</option>
+              <option>Other / General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Your Requirement</label>
+            <textarea placeholder="Describe your staffing need, number of positions, timeline, and any specific requirements…"></textarea>
+          </div>
+          <button class="btn-primary" style="width:100%;justify-content:center;" onclick="alert('Thank you! Our team will contact you within 4 business hours.')">Submit Enquiry →</button>
+          <p style="font-size:12px;color:var(--text-light);margin-top:0.75rem;text-align:center;">We respond to all enquiries within 4 business hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="clients-section">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-label">Our Clients</div>
+      <h2 class="section-title" style="font-size:1.6rem;">Join 50+ Clients Who Trust Global Contractors</h2>
+      <div class="clients-grid">
+        <div class="client-chip gov">General Administration Dept. – Telangana</div>
+        <div class="client-chip gov">Telangana Secretariat</div>
+        <div class="client-chip gov">Govt. of AP Departments</div>
+        <div class="client-chip">Public Healthcare Institutions</div>
+        <div class="client-chip">IT & Software Companies</div>
+        <div class="client-chip">Infrastructure Contractors</div>
+        <div class="client-chip">Telecom Service Providers</div>
+        <div class="client-chip">Industrial & Manufacturing</div>
+        <div class="client-chip">Educational Institutions</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div class="nav-logo-mark">GC</div>
+            <div>
+              <div style="color:var(--white);font-size:15px;font-weight:600;">Global Contractors Group</div>
+              <div style="color:var(--gold-light);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;">End-to-End Manpower Services</div>
+            </div>
+          </div>
+          <p>Headquartered in Kothapet, Hyderabad. Serving government and corporate clients across Telangana, AP, and Pan-India since 2015.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a onclick="showSubPage('permanent-staffing')">Permanent Staffing</a></li>
+            <li><a onclick="showSubPage('contract-staffing')">Contract Staffing</a></li>
+            <li><a onclick="showSubPage('vendor-mgmt')">Vendor Management</a></li>
+            <li><a onclick="showSubPage('workforce-dev')">Workforce Development</a></li>
+            <li><a onclick="showSubPage('industrial-eng')">Industrial Engineering</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Expertise</h4>
+          <ul>
+            <li><a onclick="showPage('expertise')">IT Services</a></li>
+            <li><a onclick="showPage('expertise')">Health Management</a></li>
+            <li><a onclick="showPage('expertise')">Hire Train & Deploy</a></li>
+            <li><a onclick="showPage('services')">Managed Services</a></li>
+            <li><a onclick="showPage('services')">Outsourcing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a onclick="showPage('leadership')">Leadership</a></li>
+            <li><a onclick="showPage('leadership')">Vision & Mission</a></li>
+            <li><a onclick="showPage('contact')">Contact Us</a></li>
+            <li><a onclick="showPage('home')">About Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Global Contractors Group, Kothapet, Hyderabad, Telangana. All rights reserved.</div>
+        <div>GST · ESI · EPF Compliant · Registered Manpower Agency</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- =================== SUB-PAGE: PRODUCT DETAIL =================== -->
+<div id="page-subpage" class="page">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><span onclick="showPage('home')">Home</span> / <span onclick="showPage('solutions')">Talent Solutions</span> / <span id="subpage-breadcrumb">Service</span></div>
+      <h1 id="subpage-title">Service Title</h1>
+      <p id="subpage-desc">Service description goes here.</p>
+    </div>
+  </div>
+  <section>
+    <div class="section-inner" id="subpage-content"></div>
+  </section>
+  <div class="clients-section">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-label">Current Clients</div>
+      <div class="clients-grid">
+        <div class="client-chip gov">GAD – Telangana</div>
+        <div class="client-chip gov">Telangana Secretariat</div>
+        <div class="client-chip gov">Govt. of AP</div>
+        <div class="client-chip">IT Companies</div>
+        <div class="client-chip">Healthcare Institutions</div>
+        <div class="client-chip">Industrial Firms</div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-banner">
+    <h2>Interested in This Service?</h2>
+    <p>Our team will craft a custom solution tailored to your exact requirements.</p>
+    <button class="btn-primary" onclick="showPage('contact')">Request a Proposal →</button>
+  </div>
+</div>
+
+<!-- =================== PAYSLIP REQUEST PAGE =================== -->
+<div id="page-payslip" class="page">
+
+  <!-- HERO -->
+  <div class="ps-hero">
+    <div class="ps-hero-inner">
+      <div>
+        <div class="ps-hero-badge">🔒 Secure Employee Portal</div>
+        <h1>Payslip Request<br>Self-Service Portal</h1>
+        <p>Request your payslip for any month instantly. Verified copies dispatched to your registered email within 1 business day. Powered by Global Contractors Group HR.</p>
+      </div>
+      <div class="side-info">
+        <div class="side-card">
+          <h4>What You'll Receive</h4>
+          <ul>
+            <li>Digitally generated payslip PDF</li>
+            <li>ESI & EPF contribution details</li>
+            <li>Gross, deductions & net breakdown</li>
+            <li>Employer-signed & stamped copy</li>
+          </ul>
+        </div>
+        <div class="side-card">
+          <h4>Delivery Timeline</h4>
+          <p>Standard requests: <strong style="color:var(--gold-light);">within 1 business day</strong><br>Bulk / multiple months: <strong style="color:var(--gold-light);">2–3 business days</strong></p>
+        </div>
+        <div class="side-card">
+          <h4>Need Help?</h4>
+          <p>Call HR: <strong style="color:var(--gold-light);">+91 40 XXXX XXXX</strong><br>Email: <strong style="color:var(--gold-light);">hr@globalcontractorsgroup.in</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM SECTION -->
+  <section style="background:var(--off-white);padding:4rem 2rem;">
+    <div style="max-width:700px;margin:0 auto;">
+
+      <!-- STEP INDICATOR -->
+      <div class="ps-steps" id="ps-steps">
+        <div class="ps-step active" id="psstep-1">
+          <div class="ps-step-dot">1</div>
+          <div class="ps-step-label">Your Details</div>
+        </div>
+        <div class="ps-step" id="psstep-2">
+          <div class="ps-step-dot">2</div>
+          <div class="ps-step-label">Payslip Period</div>
+        </div>
+        <div class="ps-step" id="psstep-3">
+          <div class="ps-step-dot">3</div>
+          <div class="ps-step-label">Confirm & Submit</div>
+        </div>
+        <div class="ps-step" id="psstep-done">
+          <div class="ps-step-dot">✓</div>
+          <div class="ps-step-label">Submitted</div>
+        </div>
+      </div>
+
+      <div class="ps-card">
+
+        <!-- STEP 1: Employee Details -->
+        <div id="ps-panel-1">
+          <div class="ps-info-box">
+            <h4>Please have the following ready</h4>
+            <ul>
+              <li>Your UAN (Universal Account Number) — 12 digits, issued by EPFO</li>
+              <li>Your registered mobile number and email address</li>
+              <li>Your Employee ID (if known)</li>
+            </ul>
+          </div>
+
+          <div class="ps-form-section-title">Employee Identification</div>
+
+          <div class="ps-row">
+            <div class="ps-field">
+              <label>Full Name <span>*</span></label>
+              <input type="text" id="ps-name" placeholder="As per payroll records">
+              <div class="field-error" id="err-name">Please enter your full name.</div>
+            </div>
+            <div class="ps-field">
+              <label>Employee ID</label>
+              <input type="text" id="ps-empid" placeholder="e.g. GCG-2024-1042">
+              <div class="field-hint">Optional — helps faster processing</div>
+            </div>
+          </div>
+
+          <div class="ps-field">
+            <label>UAN (Universal Account Number) <span>*</span></label>
+            <input type="text" id="ps-uan" placeholder="12-digit UAN number" maxlength="12" oninput="this.value=this.value.replace(/\D/g,'')">
+            <div class="field-hint">Your UAN is printed on your previous payslip or PF passbook</div>
+            <div class="field-error" id="err-uan">Please enter a valid 12-digit UAN number.</div>
+          </div>
+
+          <div class="ps-form-section">
+            <div class="ps-form-section-title">Contact Details</div>
+            <div class="ps-row">
+              <div class="ps-field">
+                <label>Registered Mobile Number <span>*</span></label>
+                <input type="tel" id="ps-phone" placeholder="+91 XXXXX XXXXX" maxlength="13">
+                <div class="field-hint">Must match records in our HR system</div>
+                <div class="field-error" id="err-phone">Enter a valid 10-digit mobile number.</div>
+              </div>
+              <div class="ps-field">
+                <label>Email Address <span>*</span></label>
+                <input type="email" id="ps-email" placeholder="your@email.com">
+                <div class="field-hint">Payslip PDF will be sent to this email</div>
+                <div class="field-error" id="err-email">Enter a valid email address.</div>
+              </div>
+            </div>
+            <div class="ps-field">
+              <label>Alternate Mobile (Optional)</label>
+              <input type="tel" id="ps-phone2" placeholder="+91 XXXXX XXXXX" maxlength="13">
+            </div>
+          </div>
+
+          <button class="ps-submit" onclick="psNext(1)">Continue to Select Pay Period →</button>
+        </div>
+
+        <!-- STEP 2: Period Selection -->
+        <div id="ps-panel-2" style="display:none;">
+          <div class="ps-form-section-title">Select Payslip Period</div>
+
+          <div class="ps-row">
+            <div class="ps-field">
+              <label>Month <span>*</span></label>
+              <select id="ps-month">
+                <option value="">Select month…</option>
+                <option>January</option><option>February</option><option>March</option>
+                <option>April</option><option>May</option><option>June</option>
+                <option>July</option><option>August</option><option>September</option>
+                <option>October</option><option>November</option><option>December</option>
+              </select>
+              <div class="field-error" id="err-month">Please select a month.</div>
+            </div>
+            <div class="ps-field">
+              <label>Year <span>*</span></label>
+              <select id="ps-year">
+                <option value="">Select year…</option>
+                <option>2026</option><option>2025</option><option>2024</option>
+                <option>2023</option><option>2022</option><option>2021</option>
+                <option>2020</option>
+              </select>
+              <div class="field-error" id="err-year">Please select a year.</div>
+            </div>
+          </div>
+
+          <div class="ps-field">
+            <label>Request Type <span>*</span></label>
+            <select id="ps-reqtype">
+              <option value="">Select request type…</option>
+              <option>Single Month Payslip</option>
+              <option>Multiple Months (specify in notes)</option>
+              <option>Full Financial Year (Apr–Mar)</option>
+              <option>Form 16 / Income Tax Certificate</option>
+              <option>EPF/ESI Contribution Statement</option>
+            </select>
+            <div class="field-hint">For multiple months, we will process and email all payslips together</div>
+            <div class="field-error" id="err-reqtype">Please select request type.</div>
+          </div>
+
+          <div class="ps-field">
+            <label>Preferred Delivery Format</label>
+            <select id="ps-format">
+              <option value="email">Email (PDF) — Default & Free</option>
+              <option value="whatsapp">WhatsApp (PDF)</option>
+              <option value="both">Both Email & WhatsApp</option>
+            </select>
+          </div>
+
+          <div class="ps-field">
+            <label>Additional Notes / Special Instructions</label>
+            <input type="text" id="ps-notes" placeholder="e.g. Multiple months: Jan–Mar 2025, or urgent request reason">
+          </div>
+
+          <div class="ps-checkbox-row">
+            <input type="checkbox" id="ps-consent" checked>
+            <label for="ps-consent">I confirm the details provided are accurate and I am the employee requesting this payslip. I understand that payslip data is confidential and will be sent only to my registered contact.</label>
+          </div>
+
+          <div style="display:flex;gap:1rem;margin-top:1.75rem;">
+            <button onclick="psBack(2)" style="flex:1;padding:15px;background:var(--off-white);border:1.5px solid var(--border);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:var(--text-mid);cursor:pointer;">← Back</button>
+            <button class="ps-submit" style="flex:2;margin-top:0;" onclick="psNext(2)">Review & Confirm →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Review & Confirm -->
+        <div id="ps-panel-3" style="display:none;">
+          <div class="ps-form-section-title">Review Your Request</div>
+          <div id="ps-summary" style="background:var(--off-white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;"></div>
+
+          <div style="background:rgba(201,146,42,0.08);border:1px solid rgba(201,146,42,0.25);border-radius:8px;padding:1rem 1.25rem;margin-bottom:1.5rem;">
+            <div style="font-size:13px;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start;">
+              <span style="color:var(--gold);font-size:16px;">ℹ</span>
+              <span>Your payslip will be dispatched to your registered email and/or WhatsApp within <strong>1 business day</strong>. Your request reference number will be shown after submission.</span>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:1rem;">
+            <button onclick="psBack(3)" style="flex:1;padding:15px;background:var(--off-white);border:1.5px solid var(--border);border-radius:6px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:var(--text-mid);cursor:pointer;">← Edit</button>
+            <button class="ps-submit" style="flex:2;margin-top:0;background:var(--gold);color:var(--navy);" onclick="psSubmit()">✓ Submit Payslip Request</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: Success -->
+        <div id="ps-panel-done" style="display:none;">
+          <div class="ps-success">
+            <div class="ps-success-icon">✅</div>
+            <h3>Request Submitted!</h3>
+            <p>Your payslip request has been received and logged. Our HR team will process it within 1 business day.</p>
+            <div class="ps-ref" id="ps-ref-num">GCG-PS-000000</div>
+            <p style="font-size:13px;color:var(--text-light);">Save this reference number for follow-up queries.</p>
+
+            <div class="ps-tracking">
+              <h4>Request Status Tracker</h4>
+              <div class="ps-track-step">
+                <div class="ps-track-dot green"></div>
+                <div>
+                  <div class="ps-track-text">Request received & logged</div>
+                  <div class="ps-track-time" id="ps-submit-time">—</div>
+                </div>
+              </div>
+              <div class="ps-track-step">
+                <div class="ps-track-dot amber"></div>
+                <div>
+                  <div class="ps-track-text">HR verification in progress</div>
+                  <div class="ps-track-time">Estimated: within 4 business hours</div>
+                </div>
+              </div>
+              <div class="ps-track-step">
+                <div class="ps-track-dot grey"></div>
+                <div>
+                  <div class="ps-track-text">Payslip generated & dispatched to your email</div>
+                  <div class="ps-track-time">Estimated: within 1 business day</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+              <button class="btn-primary" onclick="psReset()">Submit Another Request</button>
+              <button class="btn-outline" style="color:var(--navy);border-color:var(--border);" onclick="showPage('contact')">Contact HR Directly</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end ps-card -->
+
+      <!-- HELP SECTION BELOW FORM -->
+      <div style="margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;">
+          <h4 style="color:var(--navy);font-size:14px;margin-bottom:0.75rem;">🔍 Can't find your UAN?</h4>
+          <p style="font-size:13px;color:var(--text-mid);line-height:1.65;">Your UAN is on your EPFO passbook, previous payslip, or check the EPFO member portal at <strong>unifiedportal-mem.epfindia.gov.in</strong> using your Aadhaar or PAN.</p>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:1.5rem;">
+          <h4 style="color:var(--navy);font-size:14px;margin-bottom:0.75rem;">📞 Need Urgent Assistance?</h4>
+          <p style="font-size:13px;color:var(--text-mid);line-height:1.65;">For urgent payslip needs (bank/visa requirements), call our HR directly at <strong>+91 40 XXXX XXXX</strong> or email <strong>hr@globalcontractorsgroup.in</strong> mentioning "URGENT."</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER STRIP -->
+  <div class="clients-section">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-label">Quick Links</div>
+      <div class="clients-grid">
+        <div class="client-chip" onclick="showPage('contact')">Contact HR</div>
+        <div class="client-chip" onclick="showPage('home')">Home</div>
+        <div class="client-chip" onclick="showPage('solutions')">Talent Solutions</div>
+        <div class="client-chip" onclick="showPage('expertise')">Our Services</div>
+        <div class="client-chip" onclick="showPage('leadership')">About Us</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- =================== END PAYSLIP PAGE =================== -->
+
+<script>
+const subPages = {
+  'permanent-staffing': {
+    title: 'Permanent Staffing',
+    desc: 'Long-term talent placement with background verification, skill matching, and cultural alignment—our permanent staffing guarantees retention.',
+    content: `
+      <div class="section-label">Permanent Staffing</div>
+      <h2 class="section-title">The Right Person, Forever in the Right Role</h2>
+      <p style="color:var(--text-mid);max-width:680px;margin-bottom:2.5rem;font-size:1.05rem;line-height:1.8;">Permanent hires define your organization's culture, productivity, and future. Global Contractors Group applies a rigorous, multi-layered search process to ensure every permanent placement we make is a decision you'll be proud of—5 years from now.</p>
+      <div class="cards-grid cols-3">
+        <div class="card"><div class="card-icon navy">🔍</div><h3>Deep Talent Search</h3><p>We search beyond active job-seekers—reaching passive talent through our decade-long network across Telangana, AP, and Pan-India industries.</p></div>
+        <div class="card"><div class="card-icon gold">✅</div><h3>5-Point Verification</h3><p>Criminal background, education, employment history, reference checks, and address verification—every permanent hire is fully cleared.</p></div>
+        <div class="card"><div class="card-icon teal">🎯</div><h3>Role-Specific Assessment</h3><p>Technical tests, behavioral interviews, and role simulations designed specifically for each position—not generic screening.</p></div>
+        <div class="card"><div class="card-icon navy">📊</div><h3>Offer & Negotiation Support</h3><p>We handle offer letters, salary negotiation, and joining coordination—ensuring a smooth close every time.</p></div>
+        <div class="card"><div class="card-icon gold">🔄</div><h3>90-Day Replacement Guarantee</h3><p>If a permanent hire doesn't work out within 90 days, we replace at no additional charge—our confidence in our process.</p></div>
+        <div class="card"><div class="card-icon teal">📈</div><h3>Post-Placement Support</h3><p>We follow up at 30, 60, and 90 days to ensure smooth integration and early identification of any concerns.</p></div>
+      </div>`
+  },
+  'contract-staffing': {
+    title: 'Contract Staffing',
+    desc: 'Flexible, compliant, and scalable contract manpower—with full ESI, EPF, and GST compliance managed end-to-end.',
+    content: `
+      <div class="section-label">Contract Staffing</div>
+      <h2 class="section-title">Flexible Manpower. Zero Compliance Risk.</h2>
+      <p style="color:var(--text-mid);max-width:680px;margin-bottom:2.5rem;font-size:1.05rem;line-height:1.8;">Government projects, seasonal spikes, and project-based work demand manpower flexibility. Our contract staffing model gives you exactly the right number of people, at exactly the right time—while we handle every payroll, compliance, and HR obligation.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;" class="two-col">
+        <div>
+          <h3 style="color:var(--navy);margin-bottom:1.5rem;font-size:1.3rem;">What's Included</h3>
+          <ul class="service-list">
+            <li><span class="s-dot"></span>ESI & EPF registration and monthly contributions</li>
+            <li><span class="s-dot"></span>GST-compliant invoicing and billing</li>
+            <li><span class="s-dot"></span>On-time salary disbursement every month</li>
+            <li><span class="s-dot"></span>Leave management and attendance tracking</li>
+            <li><span class="s-dot"></span>Offer letters, ID cards, and joining kits</li>
+            <li><span class="s-dot"></span>Professional Tax and Labour Law compliance</li>
+            <li><span class="s-dot"></span>Exit management and F&F settlement</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <h3>Contract Staffing for Government</h3>
+          <p style="color:rgba(255,255,255,0.65);margin-top:0.75rem;font-size:0.9rem;line-height:1.7;">Our contract staffing for Telangana government departments—including GAD—follows all government orders and statutory requirements with complete transparency and audit-ready documentation.</p>
+          <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;position:relative;z-index:1;">
+            <div style="background:rgba(255,255,255,0.1);padding:8px 14px;border-radius:4px;font-size:13px;color:rgba(255,255,255,0.8);">G.O.Rt.No.4271</div>
+            <div style="background:rgba(255,255,255,0.1);padding:8px 14px;border-radius:4px;font-size:13px;color:rgba(255,255,255,0.8);">G.O.Ms.No.60</div>
+            <div style="background:rgba(255,255,255,0.1);padding:8px 14px;border-radius:4px;font-size:13px;color:rgba(255,255,255,0.8);">G.O.Ms.No.63</div>
+            <div style="background:rgba(255,255,255,0.1);padding:8px 14px;border-radius:4px;font-size:13px;color:rgba(255,255,255,0.8);">2% Agency Commission</div>
+          </div>
+        </div>
+      </div>`
+  },
+  'vendor-mgmt': {
+    title: 'Vendor Management',
+    desc: 'One partner, all vendors. Streamlined multi-vendor staffing management with standardized SLAs and consolidated reporting.',
+    content: `
+      <div class="section-label">Vendor Management</div>
+      <h2 class="section-title">One Partner to Manage<br>Your Entire Vendor Ecosystem</h2>
+      <p style="color:var(--text-mid);max-width:680px;margin-bottom:2.5rem;font-size:1.05rem;line-height:1.8;">Managing multiple staffing vendors is a headache—inconsistent quality, multiple invoices, varying compliance standards, and accountability gaps. Our Vendor Management service gives you one single, accountable partner who manages every vendor relationship on your behalf.</p>
+      <div class="cards-grid cols-3">
+        <div class="card"><div class="card-icon navy">📋</div><h3>Vendor Onboarding & Audit</h3><p>We audit, onboard, and quality-certify all sub-vendors—ensuring every partner meets our compliance and quality benchmarks.</p></div>
+        <div class="card"><div class="card-icon gold">📊</div><h3>Consolidated Reporting</h3><p>One dashboard, one monthly report, one point of contact—complete visibility into all vendor performance and manpower metrics.</p></div>
+        <div class="card"><div class="card-icon teal">⚖️</div><h3>SLA Standardization</h3><p>We enforce consistent service level agreements across all vendors—no more variance in quality or delivery standards.</p></div>
+        <div class="card"><div class="card-icon navy">🧾</div><h3>Consolidated Billing</h3><p>One invoice for all vendors—eliminating billing complexity, reconciliation delays, and multiple payment cycles.</p></div>
+        <div class="card"><div class="card-icon gold">🔄</div><h3>Escalation Management</h3><p>We handle all vendor disputes, performance issues, and replacements—you never have to deal with vendor friction directly.</p></div>
+        <div class="card"><div class="card-icon teal">📜</div><h3>Compliance Umbrella</h3><p>All sub-vendor statutory compliance—ESI, EPF, GST—monitored and enforced under our single compliance framework.</p></div>
+      </div>`
+  },
+  'workforce-dev': {
+    title: 'Workforce Development',
+    desc: 'Our Hire–Train–Deploy model turns raw talent into job-ready professionals—custom-built for your exact operational requirements.',
+    content: `
+      <div class="section-label">Workforce Development</div>
+      <h2 class="section-title">We Don't Just Find Talent—<br>We Build It.</h2>
+      <p style="color:var(--text-mid);max-width:680px;margin-bottom:2.5rem;font-size:1.05rem;line-height:1.8;">India's talent pool is vast, but the gap between raw potential and job-readiness remains a challenge for most employers. Our Hire–Train–Deploy model closes that gap—delivering professionals who arrive at your door trained, verified, and ready to contribute from day one.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;" class="cards-grid cols-3">
+        <div style="background:var(--navy);border-radius:8px;padding:2rem;color:var(--white);">
+          <div style="font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--gold-light);font-weight:900;">HIRE</div>
+          <p style="color:rgba(255,255,255,0.7);margin-top:0.75rem;font-size:0.95rem;line-height:1.7;">Aptitude testing, psychometric evaluation, and background verification to identify the best raw talent from India's vast candidate pool—focused on Telangana and AP but reaching nationwide.</p>
+        </div>
+        <div style="background:var(--gold);border-radius:8px;padding:2rem;">
+          <div style="font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--navy);font-weight:900;">TRAIN</div>
+          <p style="color:rgba(10,22,40,0.75);margin-top:0.75rem;font-size:0.95rem;line-height:1.7;">Role-specific technical training, soft skills development, compliance orientation, and on-the-job simulations—customized in partnership with your HR and operations teams.</p>
+        </div>
+        <div style="background:var(--accent-teal);border-radius:8px;padding:2rem;">
+          <div style="font-family:'Playfair Display',serif;font-size:2.5rem;color:rgba(255,255,255,0.9);font-weight:900;">DEPLOY</div>
+          <p style="color:rgba(255,255,255,0.75);margin-top:0.75rem;font-size:0.95rem;line-height:1.7;">Seamless onboarding, statutory compliance from day one, 30–60–90 day performance tracking, and guaranteed replacement—because we stand behind every professional we place.</p>
+        </div>
+      </div>
+      <div style="background:var(--off-white);border:1px solid var(--border);border-radius:8px;padding:2.5rem;margin-top:2rem;">
+        <h3 style="color:var(--navy);margin-bottom:1.5rem;">Sectors We Build Talent For</h3>
+        <div class="sector-badges">
+          <div class="badge featured">Government Services</div>
+          <div class="badge">IT & Technology</div>
+          <div class="badge">Healthcare</div>
+          <div class="badge">Banking & Finance</div>
+          <div class="badge">Infrastructure</div>
+          <div class="badge">Retail & Customer Service</div>
+          <div class="badge">Industrial & Manufacturing</div>
+          <div class="badge">Telecom</div>
+        </div>
+      </div>`
+  },
+  'industrial-eng': {
+    title: 'Industrial Engineering Services',
+    desc: 'Specialized technical and engineering manpower for manufacturing, infrastructure, plant operations, and industrial project execution.',
+    content: `
+      <div class="section-label">Industrial Engineering Services</div>
+      <h2 class="section-title">Technical Precision Staffing<br>for Industry & Infrastructure</h2>
+      <p style="color:var(--text-mid);max-width:680px;margin-bottom:2.5rem;font-size:1.05rem;line-height:1.8;">Industrial operations demand a different grade of talent—certified, safety-aware, technically sharp, and operationally reliable. Global Contractors Group provides specialized engineering and industrial manpower that meets the exacting standards of modern manufacturing, infrastructure, and project-based industries.</p>
+      <div class="cards-grid cols-3">
+        <div class="card"><div class="card-icon navy">🏭</div><h3>Manufacturing Staffing</h3><p>Production operators, quality inspectors, line supervisors, and plant engineers—trained and certified for your specific production environment.</p></div>
+        <div class="card"><div class="card-icon gold">🏗️</div><h3>Infrastructure & Civil</h3><p>Civil engineers, site supervisors, surveyors, safety officers, and project managers for infrastructure, construction, and public works projects.</p></div>
+        <div class="card"><div class="card-icon teal">⚡</div><h3>Electrical & Mechanical</h3><p>Certified electrical engineers, maintenance technicians, and mechanical specialists for plant operations and equipment management.</p></div>
+        <div class="card"><div class="card-icon navy">🔬</div><h3>Quality & Safety</h3><p>QA/QC engineers, safety officers, and compliance specialists to maintain standards and regulatory requirements on-site.</p></div>
+        <div class="card"><div class="card-icon gold">📐</div><h3>Project Engineering</h3><p>Project managers, design engineers, estimation specialists, and planning professionals for time-bound industrial projects.</p></div>
+        <div class="card"><div class="card-icon teal">🛠️</div><h3>Maintenance & Operations</h3><p>Plant maintenance teams, instrumentation technicians, and operations specialists for continuous industrial facility management.</p></div>
+      </div>`
+  }
+};
+
+/* ---- PAYSLIP EXTRA STYLES ---- */
+const payslipStyle = document.createElement('style');
+payslipStyle.textContent = `
+  .ps-hero { background: var(--navy); padding: 4rem 2rem 3rem; position: relative; overflow: hidden; }
+  .ps-hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold)); }
+  .ps-hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .ps-hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(201,146,42,0.15); border:1px solid rgba(201,146,42,0.4); color:var(--gold-light); font-size:11px; font-weight:600; padding:5px 14px; border-radius:20px; letter-spacing:1px; text-transform:uppercase; margin-bottom:1rem; }
+  .ps-hero h1 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); color: var(--white); margin-bottom: 0.75rem; line-height: 1.2; }
+  .ps-hero p { color: rgba(255,255,255,0.6); font-size: 1rem; line-height: 1.75; }
+  .ps-card { background: var(--white); border-radius: 12px; border: 1px solid var(--border); padding: 2.5rem; box-shadow: 0 8px 40px rgba(10,22,40,0.08); }
+  .ps-form-section { margin-top: 0.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .ps-form-section-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+  .ps-field { margin-bottom: 1.25rem; }
+  .ps-field label { display: block; font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+  .ps-field label span { color: #C0392B; margin-left: 2px; }
+  .ps-field input, .ps-field select { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text-dark); background: var(--white); outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+  .ps-field input:focus, .ps-field select:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,146,42,0.12); }
+  .ps-field input.error, .ps-field select.error { border-color: #C0392B; }
+  .ps-field .field-hint { font-size: 11px; color: var(--text-light); margin-top: 5px; }
+  .ps-field .field-error { font-size: 11px; color: #C0392B; margin-top: 5px; display: none; }
+  .ps-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .ps-submit { width: 100%; padding: 15px; background: var(--navy); color: var(--white); border: none; border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 1.75rem; }
+  .ps-submit:hover { background: #112240; transform: translateY(-1px); }
+  .ps-submit:active { transform: scale(0.99); }
+  .ps-checkbox-row { display: flex; gap: 10px; align-items: flex-start; margin-top: 1.25rem; }
+  .ps-checkbox-row input[type=checkbox] { width: 16px; height: 16px; margin-top: 3px; accent-color: var(--gold); flex-shrink: 0; }
+  .ps-checkbox-row label { font-size: 13px; color: var(--text-mid); cursor: pointer; }
+  .ps-info-box { background: var(--gold-pale); border: 1px solid rgba(201,146,42,0.3); border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; }
+  .ps-info-box h4 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+  .ps-info-box ul { list-style: none; }
+  .ps-info-box ul li { font-size: 12.5px; color: var(--text-mid); padding: 3px 0; display: flex; gap: 8px; }
+  .ps-info-box ul li::before { content: '✦'; color: var(--gold); font-size: 9px; margin-top: 5px; flex-shrink: 0; }
+  .ps-steps { display: flex; gap: 0; margin-bottom: 2.5rem; }
+  .ps-step { flex: 1; text-align: center; position: relative; }
+  .ps-step::after { content:''; position:absolute; top:16px; left:50%; width:100%; height:2px; background:var(--border); z-index:0; }
+  .ps-step:last-child::after { display: none; }
+  .ps-step-dot { width: 32px; height: 32px; border-radius: 50%; background: var(--off-white); border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; color: var(--text-light); margin: 0 auto 8px; position: relative; z-index: 1; transition: all 0.3s; }
+  .ps-step.active .ps-step-dot { background: var(--navy); border-color: var(--navy); color: var(--gold-light); }
+  .ps-step.done .ps-step-dot { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+  .ps-step-label { font-size: 11px; color: var(--text-light); font-weight: 500; }
+  .ps-step.active .ps-step-label { color: var(--navy); font-weight: 600; }
+  .ps-step.done .ps-step-label { color: var(--gold); }
+  .ps-success { text-align: center; padding: 3rem 2rem; }
+  .ps-success-icon { width: 80px; height: 80px; background: #E8F5E9; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 36px; margin: 0 auto 1.5rem; }
+  .ps-success h3 { font-size: 1.8rem; color: var(--navy); margin-bottom: 0.75rem; }
+  .ps-success p { color: var(--text-mid); max-width: 400px; margin: 0 auto; line-height: 1.7; }
+  .ps-ref { background: var(--navy); color: var(--gold-light); border-radius: 8px; padding: 12px 24px; display: inline-block; font-family: monospace; font-size: 1.1rem; font-weight: 700; margin: 1.5rem 0; letter-spacing: 2px; }
+  .ps-tracking { background: var(--off-white); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-top: 1rem; text-align: left; }
+  .ps-tracking h4 { font-size: 13px; color: var(--navy); margin-bottom: 1rem; font-weight: 700; }
+  .ps-track-step { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 0.75rem; }
+  .ps-track-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+  .ps-track-dot.green { background: #27AE60; }
+  .ps-track-dot.amber { background: var(--gold); }
+  .ps-track-dot.grey { background: var(--border); }
+  .ps-track-text { font-size: 13px; color: var(--text-mid); }
+  .ps-track-time { font-size: 11px; color: var(--text-light); margin-top: 2px; }
+  .side-info { display: flex; flex-direction: column; gap: 1.25rem; }
+  .side-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 1.5rem; }
+  .side-card h4 { color: var(--gold-light); font-size: 14px; margin-bottom: 0.75rem; }
+  .side-card p, .side-card li { color: rgba(255,255,255,0.65); font-size: 13px; line-height: 1.65; }
+  .side-card ul { list-style: none; }
+  .side-card ul li { padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.07); display: flex; gap: 8px; }
+  .side-card ul li::before { content:'→'; color: var(--gold); font-size: 12px; }
+  @media(max-width:768px){ .ps-hero-inner { grid-template-columns: 1fr; gap: 2rem; } .ps-row { grid-template-columns: 1fr; } }
+`;
+document.head.appendChild(payslipStyle);
+
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + pageId).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const navEl = document.getElementById('nav-' + pageId);
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showSubPage(subId) {
+  const data = subPages[subId];
+  if (!data) return;
+  document.getElementById('subpage-breadcrumb').textContent = data.title;
+  document.getElementById('subpage-title').textContent = data.title;
+  document.getElementById('subpage-desc').textContent = data.desc;
+  document.getElementById('subpage-content').innerHTML = data.content;
+  showPage('subpage');
+}
+
+function showTab(tabId) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tabId).classList.add('active');
+  event.target.classList.add('active');
+}
+
+/* ---- PAYSLIP FORM LOGIC ---- */
+function psSetStep(step) {
+  [1,2,3,'done'].forEach(s => {
+    const panel = document.getElementById('ps-panel-' + s);
+    const stepEl = document.getElementById('psstep-' + s);
+    if (panel) panel.style.display = 'none';
+    if (stepEl) {
+      stepEl.classList.remove('active','done');
+      if (s < step) stepEl.classList.add('done');
+      if (s == step) stepEl.classList.add('active');
+    }
+  });
+  const cur = document.getElementById('ps-panel-' + step);
+  if (cur) cur.style.display = 'block';
+}
+
+function psValidate(step) {
+  let ok = true;
+  function checkField(id, errId, condition) {
+    const el = document.getElementById(id);
+    const errEl = document.getElementById(errId);
+    if (!el || !errEl) return;
+    if (!condition(el.value)) {
+      el.classList.add('error');
+      errEl.style.display = 'block';
+      ok = false;
+    } else {
+      el.classList.remove('error');
+      errEl.style.display = 'none';
+    }
+  }
+  if (step === 1) {
+    checkField('ps-name', 'err-name', v => v.trim().length >= 2);
+    checkField('ps-uan', 'err-uan', v => /^\d{12}$/.test(v.trim()));
+    checkField('ps-phone', 'err-phone', v => /^(\+91)?[6-9]\d{9}$/.test(v.replace(/\s/g,'')));
+    checkField('ps-email', 'err-email', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()));
+  }
+  if (step === 2) {
+    checkField('ps-month', 'err-month', v => v !== '');
+    checkField('ps-year', 'err-year', v => v !== '');
+    checkField('ps-reqtype', 'err-reqtype', v => v !== '');
+  }
+  return ok;
+}
+
+function psNext(step) {
+  if (!psValidate(step)) return;
+  if (step === 2) {
+    const name = document.getElementById('ps-name').value;
+    const empid = document.getElementById('ps-empid').value;
+    const uan = document.getElementById('ps-uan').value;
+    const phone = document.getElementById('ps-phone').value;
+    const phone2 = document.getElementById('ps-phone2').value;
+    const email = document.getElementById('ps-email').value;
+    const month = document.getElementById('ps-month').value;
+    const year = document.getElementById('ps-year').value;
+    const rtype = document.getElementById('ps-reqtype').value;
+    const fmt = document.getElementById('ps-format').value;
+    const notes = document.getElementById('ps-notes').value;
+    const rows = [
+      ['Full Name', name],
+      ['Employee ID', empid || '—'],
+      ['UAN', uan],
+      ['Mobile', phone],
+      ['Alternate Mobile', phone2 || '—'],
+      ['Email', email],
+      ['Payslip Period', month + ' ' + year],
+      ['Request Type', rtype],
+      ['Delivery Format', fmt],
+      ['Notes', notes || '—']
+    ];
+    document.getElementById('ps-summary').innerHTML = rows.map(([k,v]) =>
+      `<div style="display:flex;gap:1rem;padding:8px 0;border-bottom:1px solid var(--border);font-size:13.5px;">
+        <span style="color:var(--text-light);min-width:160px;">${k}</span>
+        <span style="color:var(--navy);font-weight:500;">${v}</span>
+      </div>`
+    ).join('') + `<div style="margin-top:1rem;font-size:12px;color:var(--text-light);">Please review the above before submitting. Click Edit to make changes.</div>`;
+  }
+  psSetStep(step + 1);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function psBack(step) {
+  psSetStep(step - 1);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function psSubmit() {
+  const ref = 'GCG-PS-' + Math.floor(100000 + Math.random() * 900000);
+  document.getElementById('ps-ref-num').textContent = ref;
+  const now = new Date();
+  document.getElementById('ps-submit-time').textContent =
+    now.toLocaleDateString('en-IN', {day:'2-digit',month:'short',year:'numeric'}) + ' · ' +
+    now.toLocaleTimeString('en-IN', {hour:'2-digit',minute:'2-digit'});
+  psSetStep('done');
+  const doneStep = document.getElementById('psstep-done');
+  if (doneStep) { doneStep.classList.remove('active'); doneStep.classList.add('done'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function psReset() {
+  ['ps-name','ps-empid','ps-uan','ps-phone','ps-phone2','ps-email','ps-notes'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.value = ''; el.classList.remove('error'); }
+  });
+  ['ps-month','ps-year','ps-reqtype'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.selectedIndex = 0; el.classList.remove('error'); }
+  });
+  document.querySelectorAll('.field-error').forEach(e => e.style.display = 'none');
+  psSetStep(1);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
